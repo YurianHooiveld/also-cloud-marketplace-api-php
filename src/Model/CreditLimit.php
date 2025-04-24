@@ -7,13 +7,35 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class CreditLimit
 {
-    protected ?string $comment = null;
-    protected ?string $curreny = null;
-    protected ?string $date = null;
-    protected int|float|null $limit = null;
-    protected int|float|null $remainingCreditLimit = null;
-    protected ?bool $hasCreditLimit = null;
-    protected ?int $createdByAccountId = null;
+    protected $comment = null;
+    /**
+     * @var string|null
+     */
+    protected $curreny = null;
+    /**
+     * @var string|null
+     */
+    protected $date = null;
+    /**
+     * @var string|null
+     */
+    protected $limit = null;
+    /**
+     * @var int|float|null
+     */
+    protected $remainingCreditLimit = null;
+    /**
+     * @var int|float|null
+     */
+    protected $hasCreditLimit = null;
+    /**
+     * @var bool|null
+     */
+    protected $createdByAccountId = null;
+    /**
+     * @var int|null
+     */
+
 
     /**
      * @return string|null

@@ -20,7 +20,10 @@ use SensitiveParameter;
  */
 class MarketplaceAPIClient
 {
-    protected APIClient $apiClient;
+    /**
+     * @var APIClient|null
+     */
+    protected $apiClient;
 
     /**
      * @param APIClient|null       $apiClient
@@ -48,7 +51,7 @@ class MarketplaceAPIClient
      *
      * @return mixed
      */
-    public function __call(string $name, array $arguments): mixed
+    public function __call(string $name, array $arguments)
     {
         return $this->__get($name);
     }
@@ -58,7 +61,7 @@ class MarketplaceAPIClient
      *
      * @return mixed
      */
-    public function __get(string $name): mixed
+    public function __get(string $name)
     {
         $fqdnClass = sprintf('%s\\API\\%sAPI', __NAMESPACE__, ucfirst($name));
 
@@ -77,7 +80,7 @@ class MarketplaceAPIClient
      *
      * @throws MarketplaceAPIException
      */
-    public function authenticate(string $username, #[SensitiveParameter] string $password): string
+    public function authenticate(string $username, string $password): string
     {
         $loginData = json_encode(compact('username', 'password'));
         $sessionToken = (string) $this->apiClient->call('GetSessionToken', (string) $loginData);
@@ -91,7 +94,7 @@ class MarketplaceAPIClient
      *
      * @return void
      */
-    public function setSessionToken(#[SensitiveParameter] string $sessionToken): void
+    public function setSessionToken(string $sessionToken): void
     {
         $this->apiClient->setSessionToken($sessionToken);
     }

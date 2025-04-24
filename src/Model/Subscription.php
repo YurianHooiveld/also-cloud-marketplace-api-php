@@ -7,37 +7,107 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class Subscription
 {
-    protected ?int $parentAccountId = null;
-    protected ?int $companyAccountId = null;
-    protected ?string $parentType = null;
-    protected ?int $accountId = null;
-    protected ?string $accountState = null;
-    protected ?string $serviceName = null;
-    protected ?string $serviceDisplayName = null;
-    protected ?string $contractId = null;
-    protected ?string $provisioningStatus = null;
-    protected ?int $dependencyAccountId = null;
-    protected ?string $dependencyServiceName = null;
-    protected ?string $errorDetails = null;
-    protected ?string $vendorReferenceId = null;
-    protected ?string $secondVendorReferenceId = null;
-    protected ?string $productName = null;
-    protected ?string $contractEndDate = null;
-    protected ?string $priceProtectionEndDate = null;
-    protected ?string $scheduledTerminationDate = null;
-    protected ?bool $hasRenewActionValuesConfigured = null;
-    protected ?int $remainingCreditLimit = null;
-    protected ?string $purchaseOrderNumber = null;
-    protected ?string $advancePeriodEndDate = null;
+    protected $parentAccountId = null;
+    /**
+     * @var int|null
+     */
+    protected $companyAccountId = null;
+    /**
+     * @var int|null
+     */
+    protected $parentType = null;
+    /**
+     * @var string|null
+     */
+    protected $accountId = null;
+    /**
+     * @var int|null
+     */
+    protected $accountState = null;
+    /**
+     * @var string|null
+     */
+    protected $serviceName = null;
+    /**
+     * @var string|null
+     */
+    protected $serviceDisplayName = null;
+    /**
+     * @var string|null
+     */
+    protected $contractId = null;
+    /**
+     * @var string|null
+     */
+    protected $provisioningStatus = null;
+    /**
+     * @var int|null
+     */
+    protected $dependencyAccountId = null;
+    /**
+     * @var string|null
+     */
+    protected $dependencyServiceName = null;
+    /**
+     * @var string|null
+     */
+    protected $errorDetails = null;
+    /**
+     * @var string|null
+     */
+    protected $vendorReferenceId = null;
+    /**
+     * @var string|null
+     */
+    protected $secondVendorReferenceId = null;
+    /**
+     * @var string|null
+     */
+    protected $productName = null;
+    /**
+     * @var string|null
+     */
+    protected $contractEndDate = null;
+    /**
+     * @var string|null
+     */
+    protected $priceProtectionEndDate = null;
+    /**
+     * @var string|null
+     */
+    protected $scheduledTerminationDate = null;
+    /**
+     * @var bool|null
+     */
+    protected $hasRenewActionValuesConfigured = null;
+    /**
+     * @var int|null
+     */
+    protected $remainingCreditLimit = null;
+    /**
+     * @var string|null
+     */
+    protected $purchaseOrderNumber = null;
+    /**
+     * @var string|null
+     */
+    protected $advancePeriodEndDate = null;
 
-    /** @var Field[]|null */
-    protected ?array $fields = [];
+    /**
+     * @var Field[]|null
+     */
+    protected $fields = [];
 
-    /** @var Field[]|null */
-    protected ?array $renewFields = [];
+    /**
+     * @var Field[]|null
+     */
+    protected $renewFields = [];
 
-    /** @var PriceableItem[]|null */
-    protected ?array $priceableItems = [];
+    /**
+     * @var PriceableItem[]|null
+     */
+    protected $priceableItems = [];
+
 
     /**
      * @return int|null

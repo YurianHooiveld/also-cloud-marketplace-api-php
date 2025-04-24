@@ -7,17 +7,51 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class PriceableItem
 {
-    protected ?string $chargeType = null;
-    protected ?string $priceableItemDescription = null;
-    protected ?bool $isUdrcField = null;
-    protected int|float|null $purchasePrice = null;
-    protected int|float|null $salesPrice = null;
-    protected int|float|null $suggestedRetailPrice = null;
-    protected ?string $currency = null;
-    protected ?int $priceableItemId = null;
-    protected ?string $materialNumber = null;
-    protected ?string $fieldName = null;
-    protected ?string $productNumber = null;
+    protected $chargeType = null;
+    /**
+     * @var string|null
+     */
+    protected $priceableItemDescription = null;
+    /**
+     * @var string|null
+     */
+    protected $isUdrcField = null;
+    /**
+     * @var bool|null
+     */
+    protected $purchasePrice = null;
+    /**
+     * @var int|float|null
+     */
+    protected $salesPrice = null;
+    /**
+     * @var int|float|null
+     */
+    protected $suggestedRetailPrice = null;
+    /**
+     * @var string|null
+     */
+    protected $currency = null;
+    /**
+     * @var int|null
+     */
+    protected $priceableItemId = null;
+    /**
+     * @var string|null
+     */
+    protected $materialNumber = null;
+    /**
+     * @var string|null
+     */
+    protected $fieldName = null;
+    /**
+     * @var string|null
+     */
+    protected $productNumber = null;
+    /**
+     * @var string|null
+     */
+
 
     /**
      * @return string|null

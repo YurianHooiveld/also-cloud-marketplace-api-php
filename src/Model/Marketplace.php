@@ -7,13 +7,35 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class Marketplace
 {
-    protected ?int $id = null;
-    protected ?string $name = null;
-    protected ?int $serviceCount = null;
-    protected ?int $hiddenServiceCount = null;
-    protected ?int $assigneeCount = null;
-    protected ?int $priority = null;
-    protected ?string $pricingMode = null;
+    protected $id = null;
+    /**
+     * @var int|null
+     */
+    protected $name = null;
+    /**
+     * @var string|null
+     */
+    protected $serviceCount = null;
+    /**
+     * @var int|null
+     */
+    protected $hiddenServiceCount = null;
+    /**
+     * @var int|null
+     */
+    protected $assigneeCount = null;
+    /**
+     * @var int|null
+     */
+    protected $priority = null;
+    /**
+     * @var string|null
+     */
+    protected $pricingMode = null;
+    /**
+     * @var string|null
+     */
+
 
     /**
      * @return int|null

@@ -7,35 +7,86 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class Company
 {
-    protected ?int $parentAccountId = null;
-    protected ?int $accountId = null;
-    protected ?string $accountState = null;
-    protected ?string $companyName = null;
-    protected ?string $vatId = null;
+    /** @var int|null */
+    protected $parentAccountId = null;
+
+    /** @var int|null */
+    protected $accountId = null;
+
+    /** @var string|null */
+    protected $accountState = null;
+
+    /** @var string|null */
+    protected $companyName = null;
+
+    /** @var string|null */
+    protected $vatId = null;
+
     /** @var string[]|null */
-    protected ?array $domain = [];
-    protected ?string $billingStartDate = null;
-    protected ?string $contractId = null;
-    protected ?string $purchaseOrderNumber = null;
-    protected ?string $customerId = null;
-    protected ?string $currency = null;
-    protected ?string $address = null;
-    protected ?string $city = null;
-    protected ?string $country = null;
-    protected ?string $zip = null;
-    protected ?string $email = null;
-    protected ?string $technicalEmail = null;
-    protected ?string $salesMan = null;
-    protected ?int $marketplace = null;
+    protected $domain = [];
+
+    /** @var string|null */
+    protected $billingStartDate = null;
+
+    /** @var string|null */
+    protected $contractId = null;
+
+    /** @var string|null */
+    protected $purchaseOrderNumber = null;
+
+    /** @var string|null */
+    protected $customerId = null;
+
+    /** @var string|null */
+    protected $currency = null;
+
+    /** @var string|null */
+    protected $address = null;
+
+    /** @var string|null */
+    protected $city = null;
+
+    /** @var string|null */
+    protected $country = null;
+
+    /** @var string|null */
+    protected $zip = null;
+
+    /** @var string|null */
+    protected $email = null;
+
+    /** @var string|null */
+    protected $technicalEmail = null;
+
+    /** @var string|null */
+    protected $salesMan = null;
+
+    /** @var int|null */
+    protected $marketplace = null;
+
     /** @var int[]|null */
-    protected ?array $marketplaces = [];
-    protected ?string $crefoNumber = null;
-    protected ?string $mpnId = null;
-    protected ?string $vat = null;
-    protected ?string $accountType = null;
-    protected ?string $numericId = null;
-    protected ?string $language = null;
-    protected ?bool $onlineBillSplitByEndCustomer = null;
+    protected $marketplaces = [];
+
+    /** @var string|null */
+    protected $crefoNumber = null;
+
+    /** @var string|null */
+    protected $mpnId = null;
+
+    /** @var string|null */
+    protected $vat = null;
+
+    /** @var string|null */
+    protected $accountType = null;
+
+    /** @var string|null */
+    protected $numericId = null;
+
+    /** @var string|null */
+    protected $language = null;
+
+    /** @var bool|null */
+    protected $onlineBillSplitByEndCustomer = null;
 
     /**
      * @return int|null

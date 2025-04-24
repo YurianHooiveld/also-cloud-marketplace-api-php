@@ -33,15 +33,27 @@ class APIClient
 {
     use LoggerAwareTrait;
 
-    protected ?string $sessionToken = null;
-    protected Serializer $serializer;
-    protected ObjectNormalizer $normalizer;
+    /**
+     * @var string|null
+     */
+    protected $sessionToken = null;
+    /**
+     * @var Serializer
+     */
+    protected $serializer;
+    /**
+     * @var ObjectNormalizer
+     */
+    protected $normalizer;
+    protected $client;
 
     /**
      * @param ClientInterface $client
      */
-    public function __construct(protected ClientInterface $client)
+    public function __construct(ClientInterface $client)
     {
+        $this->client = $client;
+
         $classMetadataFactory = new ClassMetadataFactory(new AttributeLoader());
         $nameConverter =  new MetadataAwareNameConverter(
             $classMetadataFactory,
@@ -49,15 +61,15 @@ class APIClient
         );
 
         $extractor = new PropertyInfoExtractor(
-            typeExtractors: [
-                new PhpDocExtractor(),
-            ]
+            [new PhpDocExtractor()]
         );
         $this->normalizer = new ObjectNormalizer(
-            classMetadataFactory: $classMetadataFactory,
-            nameConverter: $nameConverter,
-            propertyTypeExtractor: $extractor,
-            defaultContext: [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]
+            $classMetadataFactory,
+            $nameConverter,
+            null,
+            $extractor,
+            null,
+            [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]
         );
 
         $this->serializer = new Serializer(
@@ -71,7 +83,7 @@ class APIClient
      *
      * @return void
      */
-    public function setSessionToken(#[SensitiveParameter] string $sessionToken): void
+    public function setSessionToken(string $sessionToken): void
     {
         $this->sessionToken = $sessionToken;
     }
@@ -92,7 +104,7 @@ class APIClient
      *
      * @throws ExceptionInterface
      */
-    public function denormalize(mixed $response, string $class): mixed
+    public function denormalize($response, string $class)
     {
         try {
             return $this->normalizer->denormalize($response, $class);
@@ -111,7 +123,7 @@ class APIClient
      *
      * @throws MarketplaceAPIException
      */
-    public function call(string $url, ?string $body = null): mixed
+    public function call(string $url, ?string $body = null)
     {
         try {
             $request = new Request(
@@ -127,7 +139,11 @@ class APIClient
             $errorMessage = $exception->getMessage();
 
             if ($exception instanceof RequestException) {
-                $errorResponse = $this->serializer->decode((string) $exception->getResponse()?->getBody(), 'xml');
+                $response = $exception->getResponse();
+                $errorResponse = $this->serializer->decode(
+                    $response ? (string) $response->getBody() : '',
+                    'xml'
+                );
                 $errorMessage = $errorResponse['Reason']['Text']['#'] ?? 'Invalid API call';
             }
 

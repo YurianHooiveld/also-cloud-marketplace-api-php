@@ -7,14 +7,39 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class User
 {
-    protected ?int $parentAccountId = null;
-    protected ?int $accountId = null;
-    protected ?string $accountState = null;
-    protected ?string $firstName = null;
-    protected ?string $lastName = null;
-    protected ?string $email = null;
-    protected ?string $username = null;
-    protected ?string $lastLogon = null;
+    protected $parentAccountId = null;
+    /**
+     * @var int|null
+     */
+    protected $accountId = null;
+    /**
+     * @var int|null
+     */
+    protected $accountState = null;
+    /**
+     * @var string|null
+     */
+    protected $firstName = null;
+    /**
+     * @var string|null
+     */
+    protected $lastName = null;
+    /**
+     * @var string|null
+     */
+    protected $email = null;
+    /**
+     * @var string|null
+     */
+    protected $username = null;
+    /**
+     * @var string|null
+     */
+    protected $lastLogon = null;
+    /**
+     * @var string|null
+     */
+
 
     /**
      * @return int|null

@@ -7,9 +7,18 @@ namespace Inserve\ALSOCloudMarketplaceAPI\Model;
  */
 final class Field
 {
-    protected ?string $name = null;
-    protected ?string $displayName = null;
-    protected mixed $value = null;
+    protected $name = null;
+    /**
+     * @var string|null
+     */
+    protected $displayName = null;
+    /**
+     * @var string|null
+     */
+    protected $value = null;
+    /**
+     * @var mixed
+     */
 
     /**
      * @return string|null
@@ -30,7 +39,7 @@ final class Field
     /**
      * @return mixed
      */
-    public function getValue(): mixed
+    public function getValue()
     {
         return $this->value;
     }
@@ -64,7 +73,7 @@ final class Field
      *
      * @return $this
      */
-    public function setValue(mixed $value): self
+    public function setValue($value): self
     {
         $this->value = $value;
 

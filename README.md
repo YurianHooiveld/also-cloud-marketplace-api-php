@@ -1,5 +1,5 @@
 ## Requirements
-[![PHP Version Require] PHP 7.2
+PHP 7.2
 
 ## Status
 

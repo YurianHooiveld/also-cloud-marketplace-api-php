@@ -1,5 +1,5 @@
 ## Requirements
-[![PHP Version Require](https://poser.pugx.org/inserve/also-cloud-marketplace-api-php/require/php)](https://packagist.org/packages/inserve/also-cloud-marketplace-api-php)
+[![PHP Version Require] PHP 7.2
 
 ## Status
 

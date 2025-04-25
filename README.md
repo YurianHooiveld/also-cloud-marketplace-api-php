@@ -1,7 +1,7 @@
 ## Requirements
 PHP 7.2 
 
-If you want to use the api with PHP 8.2 go to the [original repository] (https://github.com/inserveit/also-cloud-marketplace-api-php)
+If you want to use the api with PHP 8.2 go to the [original repository](https://github.com/inserveit/also-cloud-marketplace-api-php/)
 
 
 

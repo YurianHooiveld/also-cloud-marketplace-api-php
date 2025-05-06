@@ -11,14 +11,12 @@ use GuzzleHttp\Psr7\Request;
 use Inserve\ALSOCloudMarketplaceAPI\Exception\MarketplaceAPIException;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
-use SensitiveParameter;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
-use Symfony\Component\Serializer\Mapping\Loader\AttributeLoader;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
@@ -54,17 +52,13 @@ class APIClient
     {
         $this->client = $client;
 
-        $classMetadataFactory = new ClassMetadataFactory(new AttributeLoader());
-        $nameConverter =  new MetadataAwareNameConverter(
-            $classMetadataFactory,
-            new CamelCaseToSnakeCaseNameConverter()
-        );
+        $nameConverter = new CamelCaseToSnakeCaseNameConverter();
 
         $extractor = new PropertyInfoExtractor(
             [new PhpDocExtractor()]
         );
         $this->normalizer = new ObjectNormalizer(
-            $classMetadataFactory,
+            null,
             $nameConverter,
             null,
             $extractor,

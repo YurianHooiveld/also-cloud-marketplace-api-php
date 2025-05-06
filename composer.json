@@ -6,7 +6,7 @@
     "require": {
         "php": "^7.2",
         "guzzlehttp/guzzle": "^7.7",
-        "symfony/serializer": "^5.4.45",
+        "symfony/serializer": "^4.4",
         "symfony/property-access": "^5.4.45",
         "psr/log": "^1.1.4",
         "phpdocumentor/reflection-docblock": "^5.3"

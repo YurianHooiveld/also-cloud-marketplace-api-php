@@ -61,9 +61,7 @@ class APIClient
             null,
             $nameConverter,
             null,
-            $extractor,
-            null,
-            [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]
+            $extractor
         );
 
         $this->serializer = new Serializer(
@@ -101,7 +99,9 @@ class APIClient
     public function denormalize($response, string $class)
     {
         try {
-            return $this->normalizer->denormalize($response, $class);
+            return $this->normalizer->denormalize($response, $class, null, [
+                AbstractObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
+            ]);
         } catch (Exception $exception) {
             $this->logError(sprintf('(%s): %s', __FUNCTION__, $exception->getMessage()));
 
